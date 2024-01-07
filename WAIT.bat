@@ -42,6 +42,8 @@ echo Make sure this device supports UEFI!
 echo.
 
 if %advanced%==1 (
+	echo The custom install location has not been tested and it is guaranteed that it will not result in a working system right away.
+	echo Do not use it unless you know what you are doing.
 	set /p "location=How do you want the root folder to be called (Windows) "
 	if "%location%"=="" set "location=Windows"
 )
