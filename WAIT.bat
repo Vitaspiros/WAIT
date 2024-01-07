@@ -28,9 +28,10 @@ echo Windows Automated Install Tool (WAIT)
 echo This tool automates the Windows Install for you.
 echo.
 echo    /help        -     Prints this help dialog
-echo    / ?           -     Alias for /help
+echo    / ?          -     Alias for /help
 echo    /advanced    -     Enables advanced options
 echo    /nodeploy    -     Does not do the deployment
+echo    /debug       -     Enables debug mode
 echo.
 goto end
 
