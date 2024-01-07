@@ -81,7 +81,15 @@ del diskpart.txt
 if %debug%==0 cls
 
 cd /d D:\sources
-dism /get-imageinfo /imagefile:install.esd
+
+if exist install.wim (
+	set "imagefile=install.wim"
+)
+if exist install.esd (
+	set "imagefile=install.esd"
+)
+
+dism /get-imageinfo /imagefile:%imagefile%
 echo.
 echo.
 set /p "index=Choose your preferred Windows edition (index, e.g 2): "
@@ -93,12 +101,7 @@ echo.
 echo.
 echo.
 
-if exist install.wim (
-	set "imagefile=install.wim"
-)
-if exist install.esd (
-	set "imagefile=install.esd"
-)
+
 if %deploy%==1 dism /apply-image /index:%index% /imagefile:%imagefile% /applydir:C:
 
 if %debug%==0 cls
